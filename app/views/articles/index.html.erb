@@ -1,0 +1,46 @@
+<h1>Here are my articles !</h1>
+
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
+    <% @articles.each do |article| %>
+    <div class="col-xs-12">
+      <div class="text-center">
+        <h2><%= link_to article.title, article_path(article) %></h2>
+        <h6><%= article.created_at.strftime('%b %d, %Y') %></h6>
+      </div>
+
+      <div>
+        <%= truncate(article.text,length:358, escape: false) %>
+      </div>
+
+      <div class="text-center">
+        <%= link_to "READ MORE", article_path(article) %>
+      </div>
+      <br>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<%if false%>
+<table>
+<tr>
+<th>Title</th>
+<th>Text</th>
+<th colspan="3"></th>
+</tr>
+
+<% @articles.each do |article| %>
+    <tr>
+    <td><%= article.title%></td> 
+    <td><%= article.text %></td> 
+    <td><%= link_to 'Show', article_path(article) %></td> 
+    <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+    <% end %>
+</table>
+<% end %>
+<%= link_to 'New article', new_article_path %>
