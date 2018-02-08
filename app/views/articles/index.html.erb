@@ -20,54 +20,15 @@
   <div class="row">
 
     <!-- Blog Entries Column -->
-    <div class="col-md-8 offset-2 my-4">
+    <div class="col-md-10 offset-1 my-4">
 
       <% @articles.each do |article| %>
         <div class="card mb-4">
           <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
           <div class="card-body">
-            <h2 class="card-title"><%= article.title %></h2>
+            <h2 class="card-title"> <%= link_to article.title, article_path(article),{:class => "article-title"} %></h2>
             <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
-            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
-          </div>
-          <div class="card-footer text-muted">
-            <%= article.created_at.strftime('%b %d, %Y') %>
-          </div>
-        </div>
-      <% end %>
-      <% @articles.each do |article| %>
-        <div class="card mb-4">
-          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
-          <div class="card-body">
-            <h2 class="card-title"><%= article.title %></h2>
-            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
-            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
-          </div>
-          <div class="card-footer text-muted">
-            <%= article.created_at.strftime('%b %d, %Y') %>
-          </div>
-        </div>
-      <% end %>
-      <% @articles.each do |article| %>
-        <div class="card mb-4">
-          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
-          <div class="card-body">
-            <h2 class="card-title"><%= article.title %></h2>
-            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
-            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
-          </div>
-          <div class="card-footer text-muted">
-            <%= article.created_at.strftime('%b %d, %Y') %>
-          </div>
-        </div>
-      <% end %>
-      <% @articles.each do |article| %>
-        <div class="card mb-4">
-          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
-          <div class="card-body">
-            <h2 class="card-title"><%= article.title %></h2>
-            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
-            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
+            <%= link_to "OKU >", article_path(article), {:class => "btn btn-primary btn-sm"} %>
           </div>
           <div class="card-footer text-muted">
             <%= article.created_at.strftime('%b %d, %Y') %>

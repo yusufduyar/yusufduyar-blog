@@ -1,0 +1,22 @@
+
+.buttons {
+  .submit-button{
+    //@extend .float-right;
+    margin-left: 40px;
+  }
+  .publish-button{
+    //@extend .float-right;
+  }
+}
+
+//.form-container{
+//  @extend .container;
+//  @extend .col-md-10;
+//  @extend .offset-1;
+//  @extend .mt-3;
+//}
+
+a.article-title:link, a.article-title:visited{
+  color: #343a40 !important;
+}
+
