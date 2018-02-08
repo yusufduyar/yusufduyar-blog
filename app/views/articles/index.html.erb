@@ -1,46 +1,86 @@
-<h1>Here are my articles !</h1>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Yusuf DUYAR - Blog</title>
+
+</head>
+
+<body>
+
+<!-- Page Content -->
 <div class="container">
-  <div class="col-sm-10 col-sm-offset-1 col-xs-12 blog-content">
-    <% @articles.each do |article| %>
-    <div class="col-xs-12">
-      <div class="text-center">
-        <h2><%= link_to article.title, article_path(article) %></h2>
-        <h6><%= article.created_at.strftime('%b %d, %Y') %></h6>
-      </div>
 
-      <div>
-        <%= truncate(article.text,length:358, escape: false) %>
-      </div>
+  <div class="row">
 
-      <div class="text-center">
-        <%= link_to "READ MORE", article_path(article) %>
-      </div>
-      <br>
+    <!-- Blog Entries Column -->
+    <div class="col-md-8 offset-2 my-4">
+
+      <% @articles.each do |article| %>
+        <div class="card mb-4">
+          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
+          <div class="card-body">
+            <h2 class="card-title"><%= article.title %></h2>
+            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
+            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= article.created_at.strftime('%b %d, %Y') %>
+          </div>
+        </div>
+      <% end %>
+      <% @articles.each do |article| %>
+        <div class="card mb-4">
+          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
+          <div class="card-body">
+            <h2 class="card-title"><%= article.title %></h2>
+            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
+            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= article.created_at.strftime('%b %d, %Y') %>
+          </div>
+        </div>
+      <% end %>
+      <% @articles.each do |article| %>
+        <div class="card mb-4">
+          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
+          <div class="card-body">
+            <h2 class="card-title"><%= article.title %></h2>
+            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
+            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= article.created_at.strftime('%b %d, %Y') %>
+          </div>
+        </div>
+      <% end %>
+      <% @articles.each do |article| %>
+        <div class="card mb-4">
+          <!--<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">-->
+          <div class="card-body">
+            <h2 class="card-title"><%= article.title %></h2>
+            <p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>
+            <%= link_to "READ MORE", article_path(article), {:class => "btn btn-primary"} %>
+          </div>
+          <div class="card-footer text-muted">
+            <%= article.created_at.strftime('%b %d, %Y') %>
+          </div>
+        </div>
+      <% end %>
     </div>
-    <% end %>
+    <!-- /.row -->
   </div>
 </div>
+<!-- /.container -->
 
-<%if false%>
-<table>
-<tr>
-<th>Title</th>
-<th>Text</th>
-<th colspan="3"></th>
-</tr>
 
-<% @articles.each do |article| %>
-    <tr>
-    <td><%= article.title%></td> 
-    <td><%= article.text %></td> 
-    <td><%= link_to 'Show', article_path(article) %></td> 
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-          <td><%= link_to 'Destroy', article_path(article),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-</table>
-<% end %>
-<%= link_to 'New article', new_article_path %>
+</body>
+
+</html>
