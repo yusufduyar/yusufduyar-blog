@@ -1,0 +1,8 @@
+<%= flash[:notice] %>
+
+User: <%= @user.username %><br/>
+Email: <%= @user.email %><br/>
+
+<br/>
+<%= link_to "Make a new post", new_article_path %><br/>
+<%= link_to "Edit Profile", edit_user_path %><br/>

@@ -1,22 +1,33 @@
+$primary-color : #2b0042;
+$second-color: #420a60;
+
+.navbar {
+  background: linear-gradient(to right, $primary-color 21%, $second-color 100%);
+}
 
 .buttons {
   .submit-button{
-    //@extend .float-right;
     margin-left: 40px;
-  }
-  .publish-button{
-    //@extend .float-right;
   }
 }
 
-//.form-container{
-//  @extend .container;
-//  @extend .col-md-10;
-//  @extend .offset-1;
-//  @extend .mt-3;
-//}
+.custom-button{
+  color: white;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+
+.custom-button:hover, .custom-button:focus {
+  color: white;
+  background-color: $second-color;
+  border-color: $second-color;
+}
+
+.article-title{
+  color: $primary-color !important;
+}
 
 a.article-title:link, a.article-title:visited{
-  color: #343a40 !important;
+  color: $primary-color !important;
 }
 

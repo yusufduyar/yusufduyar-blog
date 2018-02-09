@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-<%= csrf_meta_tags %>
-<!--<script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>-->
-<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
-<!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
-<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-<%= stylesheet_link_tag   "bootstrap.min" %>
-<%= stylesheet_link_tag   "blog-home" %>
-<%= stylesheet_link_tag   "article_form" %>
-<%= stylesheet_link_tag   "normalize-rails" %>
-  </head>
+<head>
+  <title>Yusuf Duyar - Blog</title>
+  <%= csrf_meta_tags %>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "bootstrap.min" %>
+  <%= stylesheet_link_tag "blog-home" %>
+  <%= stylesheet_link_tag "blog-post" %>
+  <%= stylesheet_link_tag "article_form" %>
+  <%= stylesheet_link_tag "normalize-rails" %>
+  <%= javascript_include_tag "blog" %>
+  <%= javascript_include_tag "bootstrap.bundle.min" %>
+  <%= javascript_include_tag "jquery.min" %>
+</head>
 
-  <body>
-    <%= render 'shared/navigation' %>
-    <%= yield %>
+<body>
 
 
-  </body>
+<%= render 'shared/navigation' %>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "alert alert-#{key} fade-in") %>
+<% end %>
+
+<%= yield %>
+<script>
+    setTimeout("$('.alert').fadeOut('slow')", 5000)
+</script>
+</body>
 </html>

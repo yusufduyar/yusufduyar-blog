@@ -1,8 +1,41 @@
+<!-- Page Content -->
+<div class="container">
+
+  <div class="row">
+
+    <!-- Post Content Column -->
+    <div class="col-lg-10 offset-1">
+
+      <!-- Title -->
+      <h1 class="mt-4 article-title"><%= @article.title %></h1>
+
+      <hr>
+
+      <!-- Date/Time -->
+      <p><%= @article.created_at.strftime('%b %d, %Y') %></p>
+
+      <hr>
+
+      <!-- Post Content -->
+      <p><%= raw @article.text %></p>
+
+      <hr>
+
+
+
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->
+
 
 <div class="col-sm-11 col-xs-12 blog-content">
-  <h2 class="text-center"><%= @article.title %></h2>
-  <h5 class="text-center"><%= @article.created_at.strftime('%b %d, %Y') %></h5>
-  <div><%= raw @article.text %></div>
+  <h2 class="text-center"></h2>
+  <h5 class="text-center"></h5>
+
 </div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |

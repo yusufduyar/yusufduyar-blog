@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authorize_user, only: [:index, :show]
+
   def index
     @articles = Article.where(draft: false)
   end

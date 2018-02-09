@@ -1,6 +1,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require bootstrap
+//= require bootstrap.bundle.min
 //= require tinymce
+//= require blog.js
 //= require_tree .
