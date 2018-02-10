@@ -20,9 +20,11 @@
       <p><%= raw @article.text %></p>
 
       <hr>
-
-
-
+      <% if @article.draft && logged_in? %>
+        <div class="publish-button">
+          <%= link_to "Yayınla", publish_article_path(@article),{:class => "btn btn-success btn-md"} %>
+        </div>
+      <% end %>
     </div>
 
   </div>

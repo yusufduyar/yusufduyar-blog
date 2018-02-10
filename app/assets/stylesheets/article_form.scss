@@ -1,33 +1,19 @@
-$primary-color : #2b0042;
-$second-color: #420a60;
-
-.navbar {
-  background: linear-gradient(to right, $primary-color 21%, $second-color 100%);
-}
+@import "blog";
 
 .buttons {
+  display: flex;
   .submit-button{
-    margin-left: 40px;
+    margin-right: 20px;
+  }
+  .publish-button{
   }
 }
 
-.custom-button{
-  color: white;
-  background-color: $primary-color;
-  border-color: $primary-color;
-}
-
-.custom-button:hover, .custom-button:focus {
-  color: white;
-  background-color: $second-color;
-  border-color: $second-color;
-}
-
 .article-title{
-  color: $primary-color !important;
+  @extend .primary-color-title
 }
 
 a.article-title:link, a.article-title:visited{
-  color: $primary-color !important;
+  @extend .primary-color-title
 }
 

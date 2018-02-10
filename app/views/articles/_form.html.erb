@@ -26,11 +26,11 @@
 
   <div class="buttons">
     <div class="form-group submit-button">
-      <%= article.button :submit, "Kaydet",{:class => "btn btn-primary btn-md float-right"} %>
+      <%= article.button :submit, "Kaydet",{:class => "btn btn-primary btn-md"} %>
     </div>
     <% if !@article.id.nil? %>
       <div class="publish-button">
-        <%= link_to "Yayınla", publish_article_path(@article),{:class => "btn btn-success btn-md float-right"} %>
+        <%= link_to "Yayınla", publish_article_path(@article),{:class => "btn btn-success btn-md"} %>
       </div>
     <% end %>
 

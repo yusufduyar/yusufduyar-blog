@@ -1,8 +1,11 @@
-<h1>Please log in</h1><br/>
-<%= form_tag login_path do %>
-  <%= label_tag 'Username' %><br/>
-  <%= text_field_tag 'user[username]' %><br/>
-  <%= label_tag 'Password' %><br/>
-  <%= password_field_tag 'user[password]' %><br/>
-  <%= submit_tag "Log In" %>
+<%= stylesheet_link_tag "signin" %>
+<div class="container">
+<%= form_tag login_path,{:class => "form-signin"} do %>
+  <h2 class="form-signin-heading primary-color-title">Giriş Yap</h2>
+  <%= label_tag 'Username',nil,{:class => "sr-only"} %>
+  <%= text_field_tag 'user[username]',nil,{:class => "form-control",:placeholder=> "Kullanıcı Adı"} %>
+  <%= label_tag 'Password',nil,{:class => "sr-only"} %>
+  <%= password_field_tag 'user[password]',nil,{:class => "form-control",:placeholder=> "Şifre"} %>
+  <%= submit_tag "Giriş",{:class => "form-control btn btn-lg custom-button"} %>
 <% end %>
+</div>

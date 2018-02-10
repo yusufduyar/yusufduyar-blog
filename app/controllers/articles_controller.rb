@@ -7,6 +7,15 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    puts @article.draft
+    puts logged_in?
+    if !@article.draft
+      @article
+    elsif logged_in?
+      @article
+    else
+      redirect_to root_path
+    end
   end
 
   def new
