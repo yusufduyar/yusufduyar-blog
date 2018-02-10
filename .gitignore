@@ -33,3 +33,4 @@ config/secrets.yml.key
 
 public/assets
 config/puma.rb
+Gemfile.lock
