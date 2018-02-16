@@ -10,4 +10,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w[ blog-home.css bootstrap/js/bootstrap.bundle.min bootstrap.min.css article_form.css normalize-rails blog-post blog.js jquery/jquery.min signin.css ie10-viewport-bug-workaround.js fontawesome-all.min.js ]
+Rails.application.config.assets.precompile += %w[ main.css blog-home.css bootstrap/js/bootstrap.bundle.min bootstrap.min.css article_form.css normalize-rails blog-post blog.js jquery/jquery.min signin.css ie10-viewport-bug-workaround.js fontawesome-all.min.js ]
