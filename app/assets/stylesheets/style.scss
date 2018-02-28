@@ -1,0 +1,143 @@
+$link_color: #FFFC31;
+//$link_color: #E3D26F;
+//$link_color: #B7990D;
+//$link_color: #FFC857;
+//$link_color: #69306D;
+
+.content {
+    padding-bottom: 50px;
+}
+
+.content p {
+    padding-bottom: 15px;
+}
+
+.footer-custom {
+    padding: 30px;
+}
+
+.single-content p {
+    padding-bottom: 15px;
+}
+
+.single-content {
+    padding-bottom: 50px;
+}
+
+.header-content {
+    padding-bottom: 5px;
+}
+
+.subheader-content {
+    padding-bottom: 20px;
+}
+.is-underlined-link{
+  color: grey;
+  text-decoration: none;
+  border-bottom: 3px solid $link_color;
+}
+
+//.is-underlined-link{
+//  color: $link_color;
+//}
+
+/* colour changes to the bulma framework */
+a {
+    color: $link_color;
+}
+
+
+.tabs li.is-active a {
+    border-bottom-color: #ff3860;
+    color: #ff3860;   
+}
+
+/* input select  */
+.input:focus, .textarea:focus, input[type]:focus {
+    border: 1px solid #ff3860;
+    outline: none !important;
+}
+
+h1.title a {
+    color: #E6E6E6 !important;
+    font-weight: 400;
+}
+.subtitle{
+    color: #c2c2c2 !important;
+}
+
+/*h1.title a:hover{*/
+    /*border-bottom-color : #ff3860;*/
+    /*text-decoration: underline;*/
+    /*text-decoration-color: #ff3860;*/
+/*}*/
+
+header img {
+    line-height:0;
+    margin-top:15px;
+    border-radius:150px;
+    width:150px;
+    height:150px;
+    border:4px solid #E6E6E6
+}
+header img:hover{
+    border:4px solid $link_color
+}
+
+hr{
+    border: 0.5px solid #7a7a7a;
+}
+
+.nav-item
+{
+   padding: 0.2rem 0.3rem;
+   color: #c2c2c2 !important;
+}
+a.nav-item:hover{
+    color: white !important;
+}
+
+.left-panel{
+    background: #363636;
+    overflow-y: auto;
+}
+
+.right-panel{
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+@media (min-width: 720px){
+    .left-panel, .right-panel{
+        flex-grow: 1;
+        overflow-y: auto;
+        flex-shrink: 0;
+    }
+    .column {
+        height: 100%;  /*allows both columns to span the full height of the browser window*/
+        display: flex;
+        flex-direction: column;  /*places the left and right headers above the bottom content*/
+    }
+}
+
+@media screen and (max-width: 720px) {
+    body {
+        overflow-y: scroll !important;
+    }
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: hidden;  /*makes the body non-scrollable (we will add scrolling to the sidebar and main content containers)*/
+    margin: 0px;  /*removes default style*/
+    display: flex;  /*enables flex content for its children*/
+    box-sizing: border-box;
+}
+
+.columns{
+    margin-bottom: 0 !important;
+}

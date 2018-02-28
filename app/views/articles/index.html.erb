@@ -1,40 +1,32 @@
-<!-- Page Content -->
-<div class="container">
+<!-- Hero content: will be in the middle -->
+<div class="hero-body">
+    <div class="columns is-desktop">
+      <div class="column is-10">
+        <% @articles.reverse.each do |article| %>
+        <div class="header-content">
+          <div class="">
+            <h1 class="title">
+              <%= article.title.mb_chars.upcase %>
+            </h1>
+          </div>
+        </div>
 
-  <div class="row">
+        <div class="subheader-content">
 
-    <!-- Blog Entries Column -->
-    <div class="col-md-10 offset-1 my-4">
-<section class="Listing">
-  <% @articles.reverse.each do |article| %>
-  <article class="Listing Listing-article">
-    <h1 class="Listing Listing-title"><%= link_to article.title, article_path(article) %></h1>
-    <p class="Listing Listing-date">
-      <i class="fas fa-calendar-alt"></i>&nbsp;
-      <%= time_tag article.created_at,:format=>'%b %d, %Y'%>
-    </p>
-    <div class="Listing Listing-content"><%= truncate(article.text, length: 358, escape: false) %></div>
-  </article>
-  <% end %>
-</section>
+          <p>posted in <%= render partial: 'shared/categories',locals: {article: article}  %> on <a class="is-underlined-link"><%= time_tag article.created_at,:format=>'%b %d, %Y'%></a></p>
+        </div>
 
+        <div class="single-content">
+          <%= truncate(article.text, length: 358, escape: false) %>
+          <div class="">
+            <p><%= link_to "Devamını Oku", article_path(article), {:class => "button"} %></p>
+          </div>
+        </div>
 
-      <!--<% @articles.reverse.each do |article| %>-->
-        <!--<div class="card mb-4">-->
-          <!--&lt;!&ndash;<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">&ndash;&gt;-->
-          <!--<div class="card-body">-->
-            <!--<h2 class="card-title"> <%= link_to article.title, article_path(article), {:class => "article-title"} %></h2>-->
-            <!--<p class="card-text"><%= truncate(article.text, length: 358, escape: false) %></p>-->
+        <!--  end of post -->
+        <% end %>
 
-          <!--</div>-->
-          <!--<div class="card-footer text-muted" style="display: flex">-->
-            <!--<div><%= article.created_at.strftime('%b %d, %Y') %></div>-->
-            <!--<div style="margin-left:auto"> <%= link_to "Devamını Oku", article_path(article), {:class => "btn btn-sm custom-button"} %></div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--<% end %>-->
+      </div>
     </div>
-    <!-- /.row -->
-  </div>
+
 </div>
-<!-- /.container -->

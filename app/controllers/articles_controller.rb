@@ -6,8 +6,13 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
-    puts @article.draft
+    @article = Article.includes([:categories]).find_by(:id => params[:id])
+    @categories = @article.categories
+    puts '========== ARTICLE SHOW ============='
+    puts @article.as_json
+    puts @categories.as_json
+    puts '====================================='
+
     puts logged_in?
     if !@article.draft
       @article
@@ -27,8 +32,13 @@ class ArticlesController < ApplicationController
     end
 
   def update
+    puts 'params' + params.as_json.to_s
     @article = Article.find(params[:id])
+    unless @article.categories.exists?(params[:category][:category_id])
+      @article.article_categories.create(category: Category.find(params[:category][:category_id]))
+    end
 
+    puts 'article_params' + article_params.as_json.to_s
     if @article.update(article_params)
       redirect_to @article
     else

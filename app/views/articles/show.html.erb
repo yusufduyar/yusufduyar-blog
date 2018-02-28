@@ -1,25 +1,18 @@
-  <div class="row">
-    <!-- Post Content Column -->
-    <div class="col-lg-10 offset-1 my-4">
+<div class="hero-body">
+  <div class="columns is-desktop">
+    <div class="column is-10">
+      <div class="header-content">
+          <h1 class="title"> <%= @article.title.mb_chars.upcase %> </h1>
+      </div>
 
-      <!-- Title -->
-      <h1 class="mt-4 article-title"><%= @article.title %></h1>
+      <div class="subheader-content">
+        <p>posted in <%= render partial: 'shared/categories',locals: {article: @article}  %> on <a class="is-underlined-link"><%= time_tag @article.created_at,:format=>'%b %d, %Y'%></a></p>
+      </div>
 
-      <hr>
-
-      <!-- Date/Time -->
-      <p><%= @article.created_at.strftime('%b %d, %Y') %></p>
-
-      <hr>
-
-      <!-- Post Content -->
-      <p><%= raw @article.text %></p>
-
-      <hr>
-      <% if @article.draft && logged_in? %>
-        <div class="publish-button">
-          <%= link_to "Yayınla", publish_article_path(@article),{:class => "btn btn-success btn-md"} %>
-        </div>
-      <% end %>
+      <div class="single-content">
+        <p><%= raw @article.text %></p>
+      </div>
     </div>
   </div>
+</div>
+

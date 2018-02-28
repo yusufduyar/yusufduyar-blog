@@ -23,7 +23,7 @@
     <%= article.text_area :text, :class => "tinymce", :rows => 10, :cols => 120 %>
 
   </div>
-
+  <%= collection_select(:category,:category_id, Category.all, :id, :description,{:multiple=> true})%>
   <div class="buttons">
     <div class="form-group submit-button">
       <%= article.button :submit, "Kaydet",{:class => "btn btn-primary btn-md"} %>

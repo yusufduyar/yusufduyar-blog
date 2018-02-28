@@ -1,11 +1,13 @@
 <%= stylesheet_link_tag "signin" %>
-<div class="container">
+<%= stylesheet_link_tag "bulma" %>
+<%= stylesheet_link_tag "style" %>
+<div class="column is-4 is-offset-4">
+<div class="box">
 <%= form_tag login_path,{:class => "form-signin"} do %>
-  <h2 class="form-signin-heading primary-color-title">Giriş Yap</h2>
-  <%= label_tag 'Username',nil,{:class => "sr-only"} %>
-  <%= text_field_tag 'user[username]',nil,{:class => "form-control",:placeholder=> "Kullanıcı Adı"} %>
-  <%= label_tag 'Password',nil,{:class => "sr-only"} %>
-  <%= password_field_tag 'user[password]',nil,{:class => "form-control",:placeholder=> "Şifre"} %>
-  <%= submit_tag "Giriş",{:class => "form-control btn btn-lg custom-button"} %>
+  <h2 class="title has-text-centered has-text-grey">Giriş Yap</h2>
+ <div class="field"> <%= text_field_tag 'user[username]',nil,{:class => "input",:placeholder=> "Kullanıcı Adı"} %></div>
+    <div class="field"> <%= password_field_tag 'user[password]',nil,{:class => "input",:placeholder=> "Şifre"} %></div>
+  <%= submit_tag "Giriş",{:class => "button is-danger is-large is-fullwidth"} %>
 <% end %>
+</div>
 </div>

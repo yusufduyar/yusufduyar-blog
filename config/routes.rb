@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   root :to => 'articles#index'
   resources :articles
   get 'articles/:id/publish' => 'articles#publish', as: 'publish_article'
+  resources :categories
 end

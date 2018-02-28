@@ -1,0 +1,25 @@
+<!--&lt;!&ndash; Page Content &ndash;&gt;-->
+<!--<div class="container">-->
+
+  <!--<div class="row">-->
+    <!--<div class="col-md-10 offset-1 my-4">-->
+      <!--<section class="Listing">-->
+        <!--<% @articles.reverse.each do |article| %>-->
+          <!--<article class="Listing Listing-article">-->
+            <!--<h1 class="Listing Listing-title"><%= link_to article.title, article_path(article) %></h1>-->
+            <!--<p class="Listing Listing-date">-->
+              <!--<i class="fas fa-calendar-alt"></i>&nbsp;-->
+              <!--<%= time_tag article.created_at,:format=>'%b %d, %Y'%>-->
+            <!--</p>-->
+            <!--<div class="Listing Listing-content"><%= truncate(article.text, length: 358, escape: false) %></div>-->
+          <!--</article>-->
+        <!--<% end %>-->
+      <!--</section>-->
+    <!--</div>-->
+
+  <!--</div>-->
+<!--</div>-->
+
+<h1 class="title"><p> <%= @result[0][:description].to_s %></p></h1>
+
+
