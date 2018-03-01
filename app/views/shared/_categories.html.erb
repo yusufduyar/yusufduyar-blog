@@ -1,0 +1,4 @@
+<% article.categories.each do |category| %>
+  <% category_text =(category.equal? article.categories.last) ? category.description : category.description+"," %>
+  <%= link_to category_text, category_path(category), {class: "is-underlined-link"}%>
+<%end%>
