@@ -1,7 +1,7 @@
 <!-- Hero content: will be in the middle -->
 <div class="hero-body">
-    <div class="columns is-desktop">
-      <div class="column is-10">
+    <div class="columns is-desktop is-marginless">
+      <div class="column is-full">
         <% 10.times do |x| %>
           <% @articles.reverse.each do |article| %>
             <div class="header-content">
@@ -29,5 +29,4 @@
         <%end%>
       </div>
     </div>
-
 </div>

@@ -137,7 +137,11 @@ body {
     display: flex;  /*enables flex content for its children*/
     box-sizing: border-box;
 }
+//
+//.columns{
+//    margin-bottom: 0 !important;
+//}
 
 .columns{
-    margin-bottom: 0 !important;
+  width:100% !important;
 }
