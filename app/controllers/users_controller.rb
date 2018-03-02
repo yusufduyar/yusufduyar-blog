@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   def show
     # byebug
     @user = User.find(params[:id])
-    render :layout => false
+    render layout: "admin"
   end
 
   def edit

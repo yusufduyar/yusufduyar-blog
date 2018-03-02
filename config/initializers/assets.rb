@@ -10,4 +10,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
-Rails.application.config.assets.precompile += %w[ bulma.css style.css main.css blog-home.css article_form.css normalize-rails blog-post blog.js jquery/jquery.min signin.css ie10-viewport-bug-workaround.js fontawesome-all.min.js ]
+Rails.application.config.assets.precompile += %w[ admin.css bulma.css style.css main.css blog-home.css article_form.css normalize-rails blog-post blog.js jquery/jquery.min signin.css ie10-viewport-bug-workaround.js fontawesome-all.min.js ]

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorize_user, only: [:new, :create]
+  skip_before_action :verify_authenticity_token
+  skip_before_action :authorize_user, only: [:new, :create, :destroy]
 
   def new
     render :layout => false
