@@ -33,7 +33,7 @@ gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails'
-gem 'tinymce-rails'
+
 gem 'normalize-rails', '~> 4.1', '>= 4.1.1'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
 group :development, :test do
