@@ -1,0 +1,53 @@
+<% if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @article, remote: true, authenticity_token: true do |f| %>
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical">
+      <div class="tile">
+        <div class="tile is-parent is-vertical is-10">
+          <article class="tile is-child">
+            <div class="field">
+              <%= f.label :title, {class: 'label'} %>
+              <div class="control">
+                <%= f.text_field :title, {class: 'input'} %>
+              </div>
+            </div>
+          </article>
+          <article class="tile is-child">
+            <div class="field">
+              <%= f.label :text, {class: 'label'} %>
+              <div class="control">
+                <%= f.cktext_area :text, {class: 'input'} %>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child">
+            <%= render 'shared/categories_panel' %>
+          </article>
+          <article class="tile is-child">
+            <div class="field">
+              <%= f.check_box :draft,{class: 'switch',checked: :draft!},0,1 %>
+              <%= f.label :draft,'Publish' %>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="tile is-parent is-10 submit-tile">
+        <article class="tile is-child has-text-right">
+
+          <%= button_tag(:class => "button is-info is-medium is-outlined save-article-button",remote: true,data: { "disable-with": "Saving..." }) do %>
+            <span class='icon is-small'><i class='fas fa-check'></i></span><span>Save</span>
+          <% end %>
+        </article>
+      </div>
+    </div>
+  </div>
+<% end %>

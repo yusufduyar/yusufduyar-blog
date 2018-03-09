@@ -1,5 +1,9 @@
-<% flash.each do |type, message| %>
-  <div class="alert <%= bootstrap_class_for(type) %> fade in">
-    <%= message %>
-  </div>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, class: "notification-wrapper #{key}-wrapper") do%>
+    <%= content_tag(:p, value, class: "alert fade-in") %>
+  <%end%>
 <% end %>
+
+<script>
+setTimeout("$('.alert').fadeOut('slow')", 5000)
+</script>

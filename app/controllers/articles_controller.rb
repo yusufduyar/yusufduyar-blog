@@ -1,19 +1,16 @@
 class ArticlesController < ApplicationController
-  skip_before_action :authorize_user, only: [:index, :show]
+  skip_before_action :authorize_user, only: %i[index show]
+  layout 'admin', except: %i[index show]
+  before_action :load_categories, only: %i[edit new]
 
   def index
     @articles = Article.where(draft: false)
   end
 
   def show
-    @article = Article.includes([:categories]).find_by(:id => params[:id])
+    @article = Article.includes([:categories]).find_by(id: params[:id])
     @categories = @article.categories
-    puts '========== ARTICLE SHOW ============='
-    puts @article.as_json
-    puts @categories.as_json
-    puts '====================================='
 
-    puts logged_in?
     if !@article.draft
       @article
     elsif logged_in?
@@ -25,25 +22,23 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    render layout: 'admin'
   end
 
   def edit
     @article = Article.find(params[:id])
-    end
+  end
 
   def update
-    puts 'params' + params.as_json.to_s
+    puts params.as_json.to_s
     @article = Article.find(params[:id])
-    unless @article.categories.exists?(params[:category][:category_id])
-      @article.article_categories.create(category: Category.find(params[:category][:category_id]))
-    end
 
-    puts 'article_params' + article_params.as_json.to_s
-    if @article.update(article_params)
-      redirect_to @article
-    else
-      render 'edit'
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to dashboard_path }
+        format.js { redirect_to dashboard_path, status: :created, notice: 'Saved Successfully'}
+      else
+        render 'edit'
+      end
     end
   end
 
@@ -72,11 +67,24 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to articles_path
-    end
+  end
+
+  def drafts
+    @articles = Article.where(draft: true)
+    render layout: 'admin'
+    # respond_to do |format|
+    #   format.js
+    # end
+  end
 
   private
 
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :draft, category_ids: [])
   end
+
+  def load_categories
+    @categories = Category.all
+  end
+
 end

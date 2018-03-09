@@ -1,0 +1,16 @@
+<%= render 'shared/dashboard' do |x| %>
+<div class="tile is-ancestor is-6">
+  <div class="tile is-parent">
+    <div class="tile is-child box is-square has-text-centered drafts-tile">
+      <p class="title has-text-white"><%= @dashboard_data.draft_article_count %></p>
+      <p class="subtitle has-text-white">Draft Articles</p>
+    </div>
+  </div>
+  <div class="tile is-parent">
+    <div class="tile is-child box is-square has-text-centered totals-tile">
+      <p class="title has-text-white"><%= @dashboard_data.total_article_count %></p>
+      <p class="subtitle has-text-white">Total Articles</p>
+    </div>
+  </div>
+</div>
+<%end%>

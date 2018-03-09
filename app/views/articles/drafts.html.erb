@@ -1,0 +1,30 @@
+<%= render 'shared/dashboard' do |x| %>
+<div class="drafts">
+  <table class="table drafts-list is-fullwidth ">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Create Date</th>
+      <th class="has-text-centered">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @articles.reverse.each do |article| %>
+      <tr>
+        <th><%= article.id %></th>
+        <td><%= article.title %></td>
+        <td><%= time_tag article.created_at,:format=>'%b %d, %Y'%></td>
+        <td>
+          <div class="draft-action-buttons">
+          <div class="action-button"><%= link_to 'Show', article,{target: '_blank',class:'button is-link'} %></div>
+            <div class="action-button"><%= link_to 'Edit', edit_article_path(article),{class:'button is-primary'} %></div>
+              <div class="action-button"><%= link_to 'Delete', article,class: 'button is-light',method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div>
+        </td>
+      </tr>
+    <%end%>
+    </tbody>
+  </table>
+</div>
+<%end%>

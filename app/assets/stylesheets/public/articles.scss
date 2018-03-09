@@ -1,0 +1,21 @@
+.edit-form-container{
+  display: flex;
+  justify-items: center;
+}
+
+.bold-text-button{
+  color: #F6F7F7;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px;
+}
+
+.edit_article {
+  flex-basis: 100%;
+}
+
+
+.submit-part {
+  display: flex;
+  flex-direction: row-reverse;
+}

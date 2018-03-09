@@ -8,4 +8,5 @@ class CategoriesController < ApplicationController
     @articles = @category.articles
     @result = [description: @category.description, makaleler: @articles]
   end
+
 end

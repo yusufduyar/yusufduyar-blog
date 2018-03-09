@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_action :authorize_user, only: [:new, :create, :destroy]
 
   def new
+    redirect_to dashboard_path and return if logged_in?
     render :layout => false
   end
 

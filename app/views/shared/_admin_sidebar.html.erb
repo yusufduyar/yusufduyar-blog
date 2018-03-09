@@ -1,0 +1,14 @@
+<aside class="column is-2 aside hero">
+  <div>
+    <div class="compose has-text-centered">
+      <%= link_to "<i class='fas fa-file'></i>&nbsp;New Post".html_safe,
+                  new_article_path, {class: "button is-success is-block is-bold new-post-button has-text-white"} %>
+    </div>
+    <div class="main">
+      <%= link_to '<span class="icon"><i class="fas fa-edit"></i></span><span class="name">Drafts</span>'.html_safe, draft_articles_path, {class: "item", data: {turbolinks: true}} %>
+      <%= link_to '<span class="icon"><i class="fas fa-folder"></i></span><span class="name">Categories</span>'.html_safe, "#", {class: "item"} %>
+      <%= link_to '<span class="icon"><i class="fas fa-trash-alt"></i></span><span class="name">Trashed</span>'.html_safe, "#", {class: "item"} %>
+      <!--<a href="#" class="item"><span class="icon"><i class="fas fa-folder"></i></span><span class="name">Categories</span></a>-->
+    </div>
+  </div>
+</aside>

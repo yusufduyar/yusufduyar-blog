@@ -1,0 +1,28 @@
+@import "sass/utilities/all";
+
+.notification-wrapper{
+  position: absolute;
+  top: 0;
+  width: 100% !important;
+  z-index: 999;
+  opacity: 0.70;
+
+  p {
+    padding: 1rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFF;
+    letter-spacing: 1px;
+  }
+}
+
+.notice-wrapper{
+  @extend .notification-wrapper;
+  background-color: $primary;
+}
+.alert-wrapper{
+  @extend .notification-wrapper;
+  background-color: rgb(255,56,96);
+}
