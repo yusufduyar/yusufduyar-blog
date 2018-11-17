@@ -72,9 +72,6 @@ class ArticlesController < ApplicationController
   def drafts
     @articles = Article.where(draft: true)
     render layout: 'admin'
-    # respond_to do |format|
-    #   format.js
-    # end
   end
 
   private
